@@ -92,9 +92,9 @@ public class Player : MonoBehaviour
         //With the Players
         //Player Left
         if(PongBall.transform.position.x + PongBallHSpeed < -9
-            && PongBall.transform.position.x + PongBallHSpeed > -10)
+            && PongBall.transform.position.x + PongBallHSpeed > -9.1)
         {
-            if (Mathf.Abs(PadelLeft.transform.position.y - PongBall.transform.position.y) < 2)
+            if (Mathf.Abs(PadelLeft.transform.position.y - PongBall.transform.position.y) < 1.5)
             {
                 PongBallHSpeed = -PongBallHSpeed;
             }
@@ -103,9 +103,9 @@ public class Player : MonoBehaviour
 
         //Player Right
         if (PongBall.transform.position.x + PongBallHSpeed > 9
-            && PongBall.transform.position.x + PongBallHSpeed < 10)
+            && PongBall.transform.position.x + PongBallHSpeed < 9.1)
         {
-            if(Mathf.Abs(PadelRight.transform.position.y - PongBall.transform.position.y) < 2)
+            if(Mathf.Abs(PadelRight.transform.position.y - PongBall.transform.position.y) < 1.5)
             {
                 PongBallHSpeed = -PongBallHSpeed;
             }
