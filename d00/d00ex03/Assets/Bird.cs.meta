@@ -1,0 +1,34 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bird : MonoBehaviour
+{
+    float flapPowerAdd;
+    float flapPower;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        flapPowerAdd = .8f;
+        flapPower = 0f;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            flapPower = flapPowerAdd;
+        }
+        if (flapPower > 0)
+        {
+            this.transform.Translate(0f, 0.05f, 0f);
+            flapPower -= 0.05f;
+        }
+        else
+        {
+            this.transform.Translate(0f, -0.05f, 0f);
+        }
+    }
+}
