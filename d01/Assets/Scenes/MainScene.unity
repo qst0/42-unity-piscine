@@ -678,7 +678,16 @@ MonoBehaviour:
   - {fileID: 1218278677}
   jumpResetMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
+  jumpResetMaskClair:
+    serializedVersion: 2
+    m_Bits: 3328
+  jumpResetMaskThomas:
+    serializedVersion: 2
+    m_Bits: 2816
+  jumpResetMaskJohn:
+    serializedVersion: 2
+    m_Bits: 1792
 --- !u!1 &1218278677
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour
 {
     [SerializeField] private List<GameObject> players = new List<GameObject>();
-    [SerializeField] private LayerMask jumpResetMask;
+    [SerializeField] private List<LayerMask> layers = new List<LayerMask>();
+
     private int playerFocusChoice = 1;
 
     private float playerXDirection = 0;
@@ -41,6 +42,12 @@ public class Main : MonoBehaviour
         {
             playerFocusChoice = 3;
         }
+        // Player Select Camera Move:
+        this.transform.position = new Vector3(
+            players[playerFocusChoice].transform.position.x,
+            players[playerFocusChoice].transform.position.y,
+            -15f); ; //todo zoom level
+
         //End Player Select
 
         //Player Commands:
@@ -68,16 +75,12 @@ public class Main : MonoBehaviour
             playerHasJumpCommand = true;
         }
 
+
     }
 
     // Fixed Update is for physics.
     void FixedUpdate()
     {
-        this.transform.position = new Vector3(
-            players[playerFocusChoice].transform.position.x,
-            players[playerFocusChoice].transform.position.y,
-            -10f); ; //todo zoom level
-
         if (playerFocusChoice != 0 && playerHasCommand) 
         {
             players[playerFocusChoice].GetComponent<Rigidbody2D>().AddForce(
@@ -90,7 +93,8 @@ public class Main : MonoBehaviour
             playerHasJumpCommand = false;
             float distToGround = players[playerFocusChoice].GetComponent<BoxCollider2D>().bounds.extents.y + 0.2f;
             RaycastHit2D hit2D = Physics2D.Raycast(
-                players[playerFocusChoice].transform.position, Vector2.down, distToGround, jumpResetMask);
+                players[playerFocusChoice].transform.position, Vector2.down, distToGround,
+                layers[playerFocusChoice]);
             if (hit2D)
             {
                 players[playerFocusChoice].GetComponent<Rigidbody2D>().AddForce(
