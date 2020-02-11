@@ -35,7 +35,14 @@ public class Main : MonoBehaviour
         //Reload on R or Backspace.
         if (Input.GetKey(KeyCode.R) || Input.GetKey(KeyCode.Backspace))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (SceneManager.GetActiveScene().name == "Win")
+            {
+                SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
 
         //Player Select
@@ -100,6 +107,19 @@ public class Main : MonoBehaviour
         if (playerWinning[1] && playerWinning[2] && playerWinning[3])
         {
             playerWinning[0] = true;
+            Debug.Log(SceneManager.GetActiveScene().name, players[1].gameObject);
+            if (SceneManager.GetActiveScene().name == "Level1")
+            {
+                SceneManager.LoadScene("Level2", LoadSceneMode.Single);
+            }
+            else if(SceneManager.GetActiveScene().name == "Level2")
+            {
+                SceneManager.LoadScene("Level3", LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadScene("Win", LoadSceneMode.Single);
+            }
         }
         else
         {
