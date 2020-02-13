@@ -37,6 +37,9 @@ public class qstCameraController : MonoBehaviour
 #endif
         }
 
+        // Toggle Camera Modes
+
+
         //3rd Person Follow
         curX += Input.GetAxis("Mouse X");
         curY += Input.GetAxis("Mouse Y");
