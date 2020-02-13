@@ -34,7 +34,7 @@ public class PhyCamera : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             this.GetComponent<Rigidbody>().AddForce(
-                Vector2.down * speed);
+                Vector3.left * speed);
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -49,7 +49,7 @@ public class PhyCamera : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             this.GetComponent<Rigidbody>().AddForce(
-                Vector2.right * speed);
+                Vector3.right * speed);
         }
     }
 }
