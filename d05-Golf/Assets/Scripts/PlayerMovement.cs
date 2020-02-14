@@ -40,10 +40,13 @@ public class PlayerMovement : MonoBehaviour
         if (golfing)
         {
             GolfCam.enabled = true;
+            GolfBall.transform.rotation = Quaternion.Euler(0, GolfCam.transform.eulerAngles.y, 0);
+
             if (Input.GetButton("Jump"))
             {
                 GolfBall.GetComponent<Rigidbody>().AddForce(
-                    Vector3.forward * 1000);
+                    (GolfBall.transform.forward + new Vector3(0f, 0.5f, 0f))
+                    * 500);
             }
         }
         else
