@@ -695,7 +695,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567065726}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1544,8 +1544,8 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 100
-  m_DetailObjectDensity: 0.3
+  m_DetailObjectDistance: 88
+  m_DetailObjectDensity: 0.1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1024
   m_HeightmapMaximumLOD: 0
@@ -1727,7 +1727,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 69.13909
   orthographic: 0
   orthographic size: 5
