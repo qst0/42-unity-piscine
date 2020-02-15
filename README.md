@@ -39,9 +39,14 @@ Terrain, 3D Physics, Cameras and Lighting
 
 https://qst0.itch.io/unity-terrain-test?secret=izaJtRSEOxtobWbsMygiB2cQ6o
 
-TODO:
 ##d06
-Shaders
+First Person, Stealth and Shaders
+
+https://qst0.itch.io/unity-stealth-fps-demo?secret=5GPwVWLWzInWwreCM6FbgeRFNiE
+
+
+TODO:
 
 ##d07
+
 Nav Mesh 3D GUI
